@@ -111,6 +111,11 @@ const FooterWrapper = styled.footer`
     margin: 20px auto 10px auto;
   }
 
+  .box__devs li a {
+    text-decoration: none;
+    cursor: pointer;
+  }
+
   .box__devs li span {
     color: #fff;
     display: block;
@@ -189,12 +194,16 @@ const Footer: React.FC = () => {
         <div className="box__devs">
           <ul>
             <li>
-              <span>Created by</span>
-              <img src={FooterCorebizLogo} alt="" />
+              <a href="https://www.corebiz.ag/pt/">
+                <span>Created by</span>
+                <img src={FooterCorebizLogo} alt="Corebiz" />
+              </a>
             </li>
             <li>
-              <span>Powered by</span>
-              <img src={VtexLogo} alt="" />
+              <a href="https://vtex.com/br-pt/">
+                <span>Powered by</span>
+                <img src={VtexLogo} alt="Vtex" />
+              </a>
             </li>
           </ul>
         </div>
