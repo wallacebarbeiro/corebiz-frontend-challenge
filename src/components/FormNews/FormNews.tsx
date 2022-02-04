@@ -52,7 +52,6 @@ const FormNews: React.FC<Props> = ({ title }) => {
           [fieldName]: true
         }));
       } else if (!validEmail.test(e.currentTarget.value) && e.currentTarget.name === 'email') {
-        console.log(validEmail.test(e.currentTarget.value));
         setErrorValues((currentValues) => ({
           ...currentValues,
           [fieldName]: true
@@ -70,8 +69,6 @@ const FormNews: React.FC<Props> = ({ title }) => {
     const sendedForm = await userNews(values);
     if (sendedForm) {
       setisFormSended(true);
-    } else {
-      console.log('=[');
     }
   };
 
