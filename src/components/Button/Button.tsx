@@ -8,8 +8,12 @@ interface Props {
   type?: 'submit' | 'button';
 }
 
-const Button: React.FC<Props> = ({ children, ...rest }) => {
-  return <button {...rest}>{children}</button>;
+const Button: React.FC<Props> = ({ children, onClick, ...rest }) => {
+  return (
+    <button {...rest} onClick={onClick}>
+      {children}
+    </button>
+  );
 };
 
 export default Button;

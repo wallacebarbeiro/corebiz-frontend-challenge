@@ -16,6 +16,7 @@ body, html {
 
 main {
   flex: 1;
+  display: flex;
 }
 
 body, h1, h2, h3, p, ul {
@@ -51,4 +52,8 @@ img {
     margin-right: auto;
     margin-left: auto;
     padding: 0 20px;
+}
+
+.showcase__flex {
+  align-self: center;
 }

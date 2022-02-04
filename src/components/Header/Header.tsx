@@ -7,8 +7,17 @@ import UserIcon from '../../../src/assets/user-icon.svg';
 import { Input } from '../Input';
 import { Button } from '../Button';
 import { BoxAreaCliente, FormSearch, HeaderLogo, MenuButton, Wrapper } from './style';
+import { useCart } from '../../context/Cart';
 
 const Header: React.FC = () => {
+  const { cart } = useCart();
+
+  React.useEffect(() => {
+    if (cart) {
+      localStorage.setItem('getCartCount', cart.toString());
+    }
+  }, [cart]);
+
   return (
     <Wrapper>
       <div className="container">
@@ -25,7 +34,7 @@ const Header: React.FC = () => {
           </Button>
           <Button className="btn__cart">
             <img src={Cart} alt="" />
-            <span className="cart__counter">0</span>
+            <span className="cart__counter">{localStorage.getItem('getCartCount') || cart}</span>
           </Button>
         </BoxAreaCliente>
         <FormSearch>
